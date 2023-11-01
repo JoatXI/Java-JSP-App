@@ -24,6 +24,7 @@ public class PoiApp {
         int likedPoi = 0;
         boolean endLoop = false;
         while(endLoop == false) {
+            System.out.println("\n");
             System.out.println("1. Search for point of interest by location.\n");
             System.out.println("2. Serach for points of interest by type.\n");
             System.out.println("3. Like a point of interest.\n");
