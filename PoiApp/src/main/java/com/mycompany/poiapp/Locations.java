@@ -11,9 +11,9 @@ import java.util.ArrayList;
  * Represents a collection of points of interest (POIs) for a specific location.
  * Each Location object has a name and stores POIs in an ArrayList.
  */
-public class Location {
+public class Locations {
     
-    private ArrayList<Places> poi = new ArrayList<Places>();
+    private ArrayList<Poi> poi = new ArrayList<Poi>();
     private String name;
     
     /**
@@ -21,7 +21,7 @@ public class Location {
      * 
      * @param nameIn The name of the location.
      */
-    public Location(String nameIn) {
+    public Locations(String nameIn) {
         name = nameIn;
     }
     
@@ -30,7 +30,7 @@ public class Location {
      * 
      * @param p The Places object to add.
      */
-    public void addPlaces(Places p) {
+    public void addPoi(Poi p) {
         poi.add(p);
     }
     
@@ -40,10 +40,10 @@ public class Location {
      * @param poiName The name of the POI to find.
      * @return The found Places object or null if not found.
      */
-    public Places findPoiByName(String searchName) {
+    public Poi findPoiByName(String searchName) {
         String searchNameLower = searchName.toLowerCase(); // Convert the user input to lowercase
         for(int i = 0; i < poi.size(); i++) {
-            Places currentPoi = poi.get(i);
+            Poi currentPoi = poi.get(i);
             String currentNameLower = currentPoi.getName().toLowerCase(); // Convert the name to lowercase
             if(currentNameLower.equals(searchNameLower)) {
                 return currentPoi;
@@ -59,7 +59,7 @@ public class Location {
      * @param newComment The new comment to set for the POI.
      */
     public void updateComment(String poiName, String newComment) {
-        Places foundPoi = findPoiByName(poiName);
+        Poi foundPoi = findPoiByName(poiName);
         if (foundPoi != null) {
             foundPoi.setComment(newComment);
         }
@@ -71,11 +71,11 @@ public class Location {
      * @param searchType The type of POIs to search for.
      * @return A list of Places objects with the specified type.
      */
-    public ArrayList<Places> findPoiByType(String searchType) {
+    public ArrayList<Poi> findPoiByType(String searchType) {
         String searchTypeLower = searchType.toLowerCase(); // Convert the user input to lowercase
-        ArrayList<Places> result = new ArrayList<>();
+        ArrayList<Poi> result = new ArrayList<>();
         for(int i = 0; i < poi.size(); i++) {
-            Places currentPoi = poi.get(i);
+            Poi currentPoi = poi.get(i);
             String currentTypeLower = currentPoi.getType().toLowerCase(); // Convert the type to lowercase
             if(currentTypeLower.equals(searchTypeLower)) {
                 result.add(currentPoi);
@@ -90,11 +90,11 @@ public class Location {
      * @param searchLocation The location of POIs to search for.
      * @return A list of Places objects at the specified location.
      */
-    public ArrayList<Places> findPoiByLocation(String searchLocation) {
+    public ArrayList<Poi> findPoiByLocation(String searchLocation) {
         String searchLocationLower = searchLocation.toLowerCase(); // Convert the user input to lowercase
-        ArrayList<Places> result = new ArrayList<>();
+        ArrayList<Poi> result = new ArrayList<>();
         for(int i = 0; i < poi.size(); i++) {
-            Places currentPoi = poi.get(i);
+            Poi currentPoi = poi.get(i);
             String currentLocationLower = currentPoi.getLocation().toLowerCase(); // Convert the location to lowercase
             if(currentLocationLower.equals(searchLocationLower)) {
                 result.add(currentPoi);
@@ -111,7 +111,7 @@ public class Location {
     public ArrayList commentList() {
         ArrayList comments = new ArrayList();
         for (int i = 0; i < poi.size(); i++) {
-            Places currentComment = poi.get(i);
+            Poi currentComment = poi.get(i);
             if (currentComment != null) {
                 String comment = currentComment.getComment();
                 if (comment != null) {

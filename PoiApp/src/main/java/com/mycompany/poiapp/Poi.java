@@ -10,7 +10,7 @@ package com.mycompany.poiapp;
  * 
  * This class stores information about a POI, including its name, type, location, and comment.
  */
-public class Places {
+public class Poi {
     private String name, type, location, comment;
     
     /**
@@ -21,7 +21,7 @@ public class Places {
      * @param locationIn The location of the POI.
      * @param commentIn The comment associated with the POI.
      */
-    public Places(String nameIn, String typeIn, String locationIn, String commentIn) {
+    public Poi(String nameIn, String typeIn, String locationIn, String commentIn) {
         this.name = nameIn;
         this.type = typeIn;
         this.location = locationIn;

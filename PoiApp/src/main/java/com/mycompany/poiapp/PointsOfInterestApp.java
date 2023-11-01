@@ -7,7 +7,7 @@ import java.util.Scanner;
  *
  * @author Joat
  */
-public class PoiApp {
+public class PointsOfInterestApp {
 
     public static void main(String[] args) {
         String location = "", type = "", name = "", comment = "";
@@ -15,11 +15,11 @@ public class PoiApp {
         Scanner optionMenu = new Scanner(System.in);
         Scanner userTyping = new Scanner(System.in);
         
-        Location poi = new Location("Southampton Attractions");
+        Locations poi = new Locations("Southampton Attractions");
         
-        poi.addPlaces(new Places ("Brewster", "Pub", "London Road", comment));
-        poi.addPlaces(new Places("Eaters", "Restaurant", "Bedford", comment));
-        poi.addPlaces(new Places ("Artsy", "Museum", "The Commons", comment));
+        poi.addPoi(new Poi ("Brewster", "Pub", "London Road", comment));
+        poi.addPoi(new Poi("Eaters", "Restaurant", "Bedford", comment));
+        poi.addPoi(new Poi ("Artsy", "Museum", "The Commons", comment));
         
         int likedPoi = 0;
         boolean endLoop = false;
@@ -40,7 +40,7 @@ public class PoiApp {
                     System.out.println("Enter point of interest location: ");
                     location = userTyping.nextLine();
 
-                    ArrayList<Places> searchedLocation = poi.findPoiByLocation(location);
+                    ArrayList<Poi> searchedLocation = poi.findPoiByLocation(location);
                     System.out.println(searchedLocation);
                 }
 
@@ -48,7 +48,7 @@ public class PoiApp {
                     System.out.println("Enter point of interest type: ");
                     type = userTyping.nextLine();
 
-                    ArrayList<Places> searchedType = poi.findPoiByType(type);
+                    ArrayList<Poi> searchedType = poi.findPoiByType(type);
                     System.out.println(searchedType);
                 }
 
@@ -111,7 +111,7 @@ public class PoiApp {
             
             catch(java.util.InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a valid NUMBER(integer) option.\n");
-                optionMenu.next(); // Consume the invalid input
+                optionMenu.next(); // Nulls the invalid input
             }
         }
     }
