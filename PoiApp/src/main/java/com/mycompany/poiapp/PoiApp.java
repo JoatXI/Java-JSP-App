@@ -16,11 +16,12 @@ public class PoiApp {
         Scanner optionMenu = new Scanner(System.in);
         Scanner userTyping = new Scanner(System.in);
         
-        Locations places = new Locations("Southampton Attractions");
+        Locations places = new Locations("Nigeria Attractions");
         
-        places.addPoi(new Poi ("Brewster", "Pub", "London Road"));
-        places.addPoi(new Poi("Eaters", "Restaurant", "Bedford"));
-        places.addPoi(new Poi ("Artsy", "Museum", "The Commons"));
+        places.addPoi(new Poi ("Koko Bar", "Bar", "Lagos"));
+        places.addPoi(new Poi("Buka Hut", "Restaurant", "Delta"));
+        places.addPoi(new Poi ("Yaya Meseum", "Museum", "Abuja"));
+        places.addPoi(new Poi ("Iya Basira", "Restaurant", "Ibadan"));
         
         
         boolean endLoop = false;
