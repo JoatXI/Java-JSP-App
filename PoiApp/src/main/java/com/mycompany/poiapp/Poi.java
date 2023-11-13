@@ -123,7 +123,12 @@ public class Poi {
         comments.add(comment);
     }
     
-    
+    /**
+     * Updates the comment for a point of interest (POI).
+     * 
+     * @param newComment is the new comment to be updated.
+     * @param commentIndex is the position of the comment to be updated.
+     */
     public void updateComment(int commentIndex, String newComment) {
     if (commentIndex >= 0 && commentIndex < comments.size()) {
         comments.set(commentIndex, newComment);
