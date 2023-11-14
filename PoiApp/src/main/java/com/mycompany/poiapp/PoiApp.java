@@ -54,6 +54,7 @@ public class PoiApp {
                 }
 
                 else if(userInput == 2) {
+                    // Search for POIs by type
                     System.out.println("\nEnter point of interest type: ");
                     type = userTyping.nextLine();
 
@@ -63,6 +64,7 @@ public class PoiApp {
                 }
 
                 else if(userInput == 3) {
+                    // Like a point of interest
                     System.out.println("\nChoose a POI to add to your likes.\n");
 
                     // Display POIs in a stack-like order
@@ -85,12 +87,14 @@ public class PoiApp {
                 }
                 
                 else if(userInput == 4) {
+                    // View Liked point of interests
                     // Displays the total number of liked POIs
                     int likeCount = places.likeList();
                     System.out.println("\nTotal liked POIs: " + likeCount);
                 }
 
                 else if(userInput == 5) {
+                    // Add a comment on a point of interest
                     System.out.println("\nChoose a POI to add a comment.\n");
 
                     // Display POIs in a stack-like order
@@ -113,6 +117,7 @@ public class PoiApp {
                 }
                 
                 else if(userInput == 6) {
+                    // Modify a previous comment on a point of interest
                     System.out.println("\nChoose a POI to modify previous comment.\n");
 
                     // Display POIs in a stack-like order
@@ -146,6 +151,7 @@ public class PoiApp {
                 }
 
                 else if(userInput == 7) {
+                    // View previous POIs comments
                     // Display comments for all POIs
                     ArrayList allComments = places.commentList();
                     if(allComments.isEmpty()) {
